@@ -1,6 +1,8 @@
 # MarioJS
 A simple Mario JavaScript Game
 
+IMPORTANT : Due to cross-origin issues on Chrome, you'll need to open the .html file on Firefox.
+
 Peach is in danger! Go save her but beware of the Koppas!
 
 Press space tp jump, left arrow to go left, right arrow to go right, jump on Koopas to kill them, go see Peach to save her.
