@@ -6,7 +6,7 @@ var container = body.getElementsByClassName("container")[0];
 
 function start(){
   var img = document.createElement("img");
-  img.src = "sprites/mario-start.png"
+  img.src = "mario-start.png"
   container.style.position = "relative";
   img.style.position = "absolute";
   img.style.top = "0px";
@@ -73,7 +73,7 @@ var Mario = function (y, x, image) {
      }else if(objectAtCellDestination !== undefined && objectAtCellDestination.constructor["name"] === "Peach"){
        mario.win();
      }else{
-       mario.image["src"] = "sprites/mario-jump.png";
+       mario.image["src"] = "mario-jump.png";
        mario.jumpPower -= 1;
      }
    }
@@ -88,13 +88,13 @@ var Mario = function (y, x, image) {
          mario.y -= 1;
        } else if(objectAtCellDestination !== undefined && objectAtCellDestination.constructor["name"] === "Koopa"){
         //map.map.push(this)
-        mario.image["src"] = "sprites/mario-win.png";
+        mario.image["src"] = "mario-win.png";
          objectAtCellDestination.die();
        }else if(objectAtCellDestination !== undefined && objectAtCellDestination.constructor["name"] === "Peach"){
          mario.win();
        }
        else {
-         mario.image["src"] = "sprites/mario.png";
+         mario.image["src"] = "mario.png";
          mario.falling = true;
        }
      }
@@ -112,9 +112,9 @@ var Mario = function (y, x, image) {
            } else if(objectAtCellDestination !== undefined && objectAtCellDestination.constructor["name"] === "Cell"){
              mario.x += 1;
            } else if(Number.isInteger(mario.x / 2)){
-             mario.image["src"] = "sprites/mario-right.png";
+             mario.image["src"] = "mario-right.png";
            }else{
-             mario.image["src"] = "sprites/mario.png";
+             mario.image["src"] = "mario.png";
            }
          }
        }
@@ -130,9 +130,9 @@ var Mario = function (y, x, image) {
            } else if(objectAtCellDestination !== undefined && objectAtCellDestination.constructor["name"] === "Cell"){
              mario.x -= 1;
            } else if(Number.isInteger(mario.x / 2)){
-             mario.image["src"] = "sprites/mario-right.png";
+             mario.image["src"] = "mario-right.png";
            } else {
-             mario.image["src"] = "sprites/mario.png";
+             mario.image["src"] = "mario.png";
            }
          }
        }
@@ -167,7 +167,7 @@ var Mario = function (y, x, image) {
    };
    this.win = function () {
      var img = document.createElement("img");
-     img.src = "sprites/mario-win.png";
+     img.src = "mario-win.png";
      container.style.position = "relative";
      img.style.position = "absolute";
      img.style.top = "150px";
@@ -185,7 +185,7 @@ var Mario = function (y, x, image) {
        clearInterval(this.interval);
        Cell.prototype.die.call(this);
        var img = document.createElement("img");
-       img.src = "sprites/mario-start-again.png";
+       img.src = "mario-start-again.png";
        container.style.position = "relative";
        img.style.position = "absolute";
        img.style.top = "150px";
@@ -279,16 +279,16 @@ var Map = function (map_path) {
         for (var j = 0; j < map[i].length; j++)
         {
           if(map[i][j] == "w") {
-           this.map.push(new Cell(i, j, "sprites/cell_sprites.png"));
+           this.map.push(new Cell(i, j, "cell_sprites.png"));
           }
           else if(map[i][j] == "k") {
-           this.map.push(new Koopa(i, j, "sprites/koopa.png"));
+           this.map.push(new Koopa(i, j, "koopa.png"));
           }
           else if(map[i][j] == "m") {
-           this.map.push(new Mario(i, j, "sprites/mario.png"));
+           this.map.push(new Mario(i, j, "mario.png"));
           }
           else if(map[i][j] == "p") {
-           this.map.push(new Peach(i, j, "sprites/peach.png"));
+           this.map.push(new Peach(i, j, "peach.png"));
          }
         }
       }
@@ -343,5 +343,5 @@ window.addEventListener("keyup", function (e) {
    }
 });
 var scale = 40;
-var map = new Map('assets/map.json');
+var map = new Map('map.json');
 var objectName;
